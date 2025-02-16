@@ -23,8 +23,13 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
-  </body>
+   <%= render partial: "navs/topnav" %>
+
+   <main class="container mx-auto mt-28 px-5 flex">
+      <div class="p4 md:container md:mx-auto">
+        <%= yield %>
+      </div>
+   </main>
+   <%= render partial: "themes/droptheme" %>
+   </body>
 </html>
