@@ -26,6 +26,14 @@
    <%= render partial: "navs/topnav" %>
 
    <main class="container mx-auto mt-28 px-5 flex">
+      <nav class="p-6">
+        <ul class="leading-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/questions">Questions</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
       <div class="p4 md:container md:mx-auto">
         <%= yield %>
       </div>
