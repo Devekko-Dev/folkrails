@@ -1,6 +1,6 @@
 <%= form_with(model: product) do |form| %>
   <% if product.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -10,33 +10,33 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+ 
+  <div class="my-5">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="my-5">
     <%= form.label :subtitle, style: "display: block" %>
     <%= form.text_field :subtitle %>
   </div>
 
-  <div>
+  <div class="my-5">
     <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
+    <%= form.textarea :description, class: "block shadow rounded-md" %>
   </div>
 
   <div>
     <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "block shadow rounded-md"  %>
   </div>
 
   <div>
     <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: "block shadow rounded-md"  %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "rounded-lg py-3 px-5" %>
   </div>
 <% end %>
