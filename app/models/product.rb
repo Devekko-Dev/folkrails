@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+  end
   after_commit -> { broadcast_refresh_later_to "products" }
   validates :title, :subtitle, :description, :image, :price, presence: true
   validates :title, uniqueness: true  

@@ -65,3 +65,7 @@ end
 gem "tailwindcss-rails", "~> 4.0"
 
 gem "tailwindcss-ruby", "~> 4.0"
+
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
+
+

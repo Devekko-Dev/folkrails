@@ -45,6 +45,7 @@
                     <div class="lg:order-2 lg:ml-5">
                         <div class="overflow-hidden border-2 border-transparent rounded-lg">
                             <%= image_tag(@product.image, class: "object-cover w-full h-full", alt: @product.title) if @product.image.attached? %>
+
                         </div>
                     </div>
 
@@ -52,27 +53,11 @@
                         <div class="flex flex-row items-stretch lg:flex-col lg:space-y-5 space-x-2.5 lg:space-x-0">
                             <button type="button" class="flex-1">
                                 <div class="overflow-hidden border-2 border-gray-900 rounded-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
-                                    <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/product-details/2/product-2.png" alt="" />
+                          <%= image_tag(@product.image.variant(:thumb), class: "object-cover w-full h-full", alt: @product.title) %>
+
                                 </div>
                             </button>
 
-                            <button type="button" class="flex-1">
-                                <div class="overflow-hidden border-2 border-transparent rounded-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
-                                    <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/product-details/2/product-3.png" alt="" />
-                                </div>
-                            </button>
-
-                            <button type="button" class="flex-1">
-                                <div class="overflow-hidden border-2 border-transparent rounded-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
-                                    <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/product-details/2/product-4.png" alt="" />
-                                </div>
-                            </button>
-
-                            <button type="button" class="flex-1">
-                                <div class="overflow-hidden border-2 border-transparent rounded-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
-                                    <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/product-details/2/product-5.png" alt="" />
-                                </div>
-                            </button>
                         </div>
                     </div>
                 </div>
