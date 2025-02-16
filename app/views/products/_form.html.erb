@@ -26,9 +26,6 @@
     <%= form.textarea :description, class: "textarea h-72 textarea-bordered textarea-primary" %>
   </div>
 
-                        <div class="overflow-hidden border-2 border-transparent rounded-lg">
-                            <%= image_tag(@product.image, class: "object-cover w-full h-full", alt: @product.title) if @product.image.attached? %>
-                        </div>
 
   <div class="form-control p-4">
     <%= form.label :image, class: "label-text" %>
