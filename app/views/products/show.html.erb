@@ -2,12 +2,6 @@
 
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
-
-<%= image_tag(@product.image, class: 'w-40') if @product.image.attached? %>
-
-<%= number_to_currency(@product.price) %>
-
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>
@@ -43,7 +37,7 @@
                             <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                         </svg>
                         <div class="-m-1">
-                            <a href="#" class="p-1 ml-0.5 text-sm font-medium text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700" aria-current="page"> CarityUI </a>
+                            <a href="#" class="p-1 ml-0.5 text-sm font-medium text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700" aria-current="page"> <%= @product.title %> </a>
                         </div>
                     </div>
                 </li>
@@ -55,7 +49,7 @@
                 <div class="lg:flex lg:items-start">
                     <div class="lg:order-2 lg:ml-5">
                         <div class="overflow-hidden border-2 border-transparent rounded-lg">
-                            <img class="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/product-details/2/product-1.png" alt="" />
+                            <%= image_tag(@product.image, class: "object-cover w-full h-full", alt: @product.title) if @product.image.attached? %>
                         </div>
                     </div>
 
@@ -90,7 +84,9 @@
             </div>
 
             <div class="lg:col-span-2 lg:row-end-2 lg:row-span-2">
-                <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Jenny’s Closets - The winter top for female, green</h1>
+                <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl"><%= @product.title %></h1>
+
+               <div class="text-gray-500 sm:text-3xl"><%= @product.subtitle %></div>
 
                 <div class="flex items-center mt-5">
                     <div class="flex items-center space-x-px">
@@ -124,7 +120,7 @@
                 </div>
 
                 <div class="flex items-center mt-8">
-                    <p class="text-3xl font-bold text-gray-900">$49</p>
+                    <p class="text-3xl font-bold text-gray-900"><%= number_to_currency(@product.price) %></p>
                     <p class="ml-2 text-2xl font-bold text-gray-500">
                         <del> $99 </del>
                     </p>
@@ -137,11 +133,9 @@
                     Save 50% right now
                 </div>
 
-                <h2 class="mt-8 text-base font-bold text-gray-900">Features</h2>
+                <h2 class="mt-8 text-base font-bold text-gray-900">Description</h2>
                 <ul class="mt-4 space-y-3 text-base font-medium text-gray-600 list-disc list-inside">
-                    <li>Made with full cotton</li>
-                    <li>Slim fit for any body</li>
-                    <li>Quality control by JC</li>
+                    <%= @product.description %>
                 </ul>
 
                 <h2 class="mt-8 text-base font-bold text-gray-900">Colors</h2>
