@@ -2,12 +2,7 @@
 
 <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
 
-  <%= button_to "Destroy this product", @product, method: :delete %>
-</div>
 
 
 <section class="py-12 bg-gray-50 sm:py-16">
@@ -374,3 +369,6 @@
         </div>
     </div>
 </section>
+<div>
+  <%= button_to "Destroy Product", @product, method: :delete %>
+</div>

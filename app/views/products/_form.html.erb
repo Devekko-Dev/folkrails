@@ -1,4 +1,4 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with(model: product, class: "contents") do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -10,30 +10,34 @@
       </ul>
     </div>
   <% end %>
- 
-  <div class="my-5">
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+
+  <div class="form-control p-4">
+    <%= form.label :title, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.text_field :title, class: "input input-bordered w-full max-w-xs" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :subtitle, style: "display: block" %>
-    <%= form.text_field :subtitle %>
+  <div class="form-control p-4">
+    <%= form.label :subtitle, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.text_field :subtitle, class: "input input-bordered w-full max-w-xs" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description, class: "block shadow rounded-md" %>
+  <div class="form-control p-4">
+    <%= form.label :description, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.textarea :description, class: "textarea h-72 textarea-bordered textarea-primary" %>
   </div>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image, class: "block shadow rounded-md"  %>
+                        <div class="overflow-hidden border-2 border-transparent rounded-lg">
+                            <%= image_tag(@product.image, class: "object-cover w-full h-full", alt: @product.title) if @product.image.attached? %>
+                        </div>
+
+  <div class="form-control p-4">
+    <%= form.label :image, class: "label-text" %>
+    <%= form.file_field :image, class: "file-input file-input-bordered w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price, class: "block shadow rounded-md"  %>
+  <div class="form-control p-4">
+    <%= form.label :price, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.text_field :price, class: "input input-bordered w-full max-w-xs" %>
   </div>
 
   <div>
