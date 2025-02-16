@@ -146,12 +146,12 @@
                 </div>
 
                 <div class="flex items-center mt-10 space-x-4">
-                    <button
-                        type="button"
-                        class="inline-flex items-center justify-center px-12 py-3 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border-2 border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-700"
-                    >
-                        Add to cart
-                    </button>
+
+                        <%= button_to "Add to Cart",
+                            line_items_path(product_id: @product),
+                            form_class: "inline",
+                            class: 'inline-flex items-center justify-center px-12 py-3 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border-2 border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-700' %>
+
 
                     <button
                         type="button"

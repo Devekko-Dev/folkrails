@@ -91,11 +91,7 @@
                             <p class="text-sm font-medium text-gray-500 ml-1.5">(431)</p>
                         </div>
                         <p class="mt-5 text-sm font-bold text-gray-900"><%= number_to_currency(product.price) %></p>
-                        <%= button_to "Add to Cart",
-                            line_items_path(product_id: product),
-                            form_class: "inline",
-                            class: 'ml-4 rounded-lg py-1 px-2
-                            text-white bg-green-600' %>
+                        
 
                     </div>
                 </div>
