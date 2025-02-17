@@ -31,6 +31,14 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        format.turbo_stream
+      # format.turbo_stream do
+      #   render turbo_stream: turbo_stream.replace(
+      #     :cart,
+      #     partial: 'layouts/cart',
+      #     locals: { cart: @cart }
+      #   )
+      # end
 #        format.html { redirect_to @line_item.cart, notice: "Line item was successfully created." }
 #        format.html { redirect_to @line_item.cart }
         format.html { redirect_to store_index_url }

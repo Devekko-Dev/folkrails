@@ -28,12 +28,7 @@
    <main class="container mx-auto mt-28 px-5 flex">
       <nav class="p-6">
 
-cart
-<% if @cart and not @cart.line_items.empty? %>
-        <div id="cart" class="bg-white rounded p-2">
-          <%= render @cart %>
-        </div>
-<% end %>
+      <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
 
         <ul class="leading-8">
           <li><a href="/">Home</a></li>
