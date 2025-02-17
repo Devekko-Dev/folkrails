@@ -9,6 +9,8 @@
 Product Catalog
 </h1>
 
+<%= turbo_stream_from 'products' %>
+
 <ul>
 
   <% cache @products do %>
@@ -36,6 +38,7 @@ Product Catalog
               </div>
             </div>
           </li>
+
       <% end %>
   
   <% end %>
