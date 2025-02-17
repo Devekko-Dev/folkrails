@@ -2,7 +2,11 @@
 <h2 class="font-bold text-lg mb-3">Your Cart</h2>
 <table class="table-auto">
 	<% cart.line_items.each do |line_item| %>
-	<tr>
+		<% if line_item == @current_item %>
+			<tr class="line-item-highlight">
+		<% else %>
+			<tr>
+		<% end %>  
 		<td class="text-right">
 			<%= line_item.quantity %>		
 		</td>
